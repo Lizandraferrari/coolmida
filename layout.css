@@ -1,0 +1,10 @@
+.centroForm{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+.borda{
+    border: rounded;
+    margin-top: 15px;
+    padding: 2%;
+}
