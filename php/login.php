@@ -2,6 +2,8 @@
 $login = $_POST['login'];
 $senha = $_POST['senha']; 
 
+$senha_hash = md5($senha);
+
 $servername = 'localhost';
 $username = 'root';
 $password = 'usbw';
@@ -21,12 +23,12 @@ if (empty($login) || empty($senha)) {
         if ($result->num_rows > 0) {
             $row = mysqli_fetch_assoc($result); 
 
-            if ($senha == $row['senha']) { //fazer um hash pra senha no cadastro e aplicar o tratamento aqui para ler corretamente
+            if ($senha_hash == $row['senha']) {
                 echo "<script language='javascript' type='text/javascript'>
-                alert('Logado com sucesso!');window.location.href='login.html';</script>";
+                alert('Logado com sucesso!');window.location.href='../navbar/login.html';</script>";
             } else {
                 echo "<script language='javascript' type='text/javascript'>
-                alert('Falha ao logar');window.location.href='login.html';</script>";
+                alert('Falha ao logar');window.location.href='../navbar/login.html';</script>";
         }        
         }
 
