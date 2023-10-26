@@ -16,7 +16,7 @@ if ($con->connect_error) {
 }
 if (empty($login) || empty($senha)) {
     echo "<script language='javascript' type='text/javascript'>
-    alert('Falha ao logar');window.location.href='login.html';</script>";
+    alert('Por favor, preencha todos os campos.');window.location.href='login.html';</script>";
     exit;
 }
     $result = mysqli_query($con, "SELECT `login`, `senha` FROM `usuarios` WHERE `login` = '" . $login . "'");
@@ -28,7 +28,7 @@ if (empty($login) || empty($senha)) {
                 alert('Logado com sucesso!');window.location.href='../navbar/login.html';</script>";
             } else {
                 echo "<script language='javascript' type='text/javascript'>
-                alert('Falha ao logar');window.location.href='../navbar/login.html';</script>";
+                alert('Usuário ou senha incorreto(s).');window.location.href='../navbar/login.html';</script>";
         }        
         }
 
