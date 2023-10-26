@@ -2,6 +2,7 @@
     display: flex;
     align-items: center; 
     justify-content: center;
+    text-align: center;
 }
 .borda{
     border-radius: 20px;
@@ -48,4 +49,27 @@ nav{
 label{
     font-weight: bold;
     color:#5f5f5f;
+}
+.btnSobre{
+    width:100%;
+    color:#9b9a9a;
+    font-weight: bold;
+    border:none;
+    background:none;
+}
+.texto{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    margin-left: 5%;
+    margin-right:5%;
+}
+.centroDiv{
+    position: absolute;
+    transform: translate(-50%, -50%); 
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width:90%
 }

@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>Pesquisar</title>
-    <script src ="code.js"></script>
-    <link rel="stylesheet"  href="layout.css" />
+    <script src ="../code.js"></script>
+    <link rel="stylesheet"  href="../layout.css" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand"><img src="../img/coolmida.png" width="90px" ></a>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand"><img src="../img/coolmida.png" width="90px" ></a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav custom-nav">
+        <li class="nav-item">
               <a class="nav-link" href="../index.html">INÍCIO</a>
             </li>
             <li class="nav-item">
@@ -39,23 +39,25 @@
               <li class="nav-item">
                 <a class="nav-link" href="login.html">LOGIN</a>
               </li>
-              <a class="nav-link py-2 px-0 px-lg-2" href="carrinho.html" rel="noopener">
-                <i class="bi-cart"></i><small class="d-lg-none ms-2">Carrinho</small>
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link py-2 px-0 px-lg-2" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="bi-search"></i>
-                <small class="d-lg-none ms-2">Busca</small>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <input type="text" placeholder="Estou com fome de..." id="busquinha">
-                <button type="button" onclick="buscar()">Procurar</button>
-            </div>
+              <li class="nav-item dropdown">
+                <a class="nav-link py-2 px-0 px-lg-2" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi-search"></i>
+                    <small class="d-lg-none ms-2">Busca</small>
+                </a>
+                <div class="dropdown-menu margem" aria-labelledby="navbarDropdownMenuLink">
+                  <form>
+                    <input type="text" placeholder="Estou com fome de..." id="busquinha">
+                    <button type="button" class="btnbusca" onclick="buscar('navbar')">Procurar</button>
+                </form>
+                </div>
+            </li>
+            <a class="nav-link py-2 px-0 px-lg-2" href="carrinho.html" rel="noopener">
+              <i class="bi-cart"></i><small class="d-lg-none ms-2">Carrinho</small>
+          </a>
         </li>
-      </ul>
-    </div>
-  </nav>
+          </ul>
+        </div>
+      </nav>
       <button type="submit" onclick="devolver()">Teste variavel</button>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
