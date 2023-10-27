@@ -12,7 +12,7 @@ function buscar(origem){
         window.location.href = "busca.html";
       }
       else if(origem == 'cadastro'){
-        window.location.href = "../navbar/buscar.html";
+        window.location.href = "../navbar/busca.html";
       }
       }
     }
@@ -67,6 +67,7 @@ function conteudoSobre(identifica){
         document.getElementById("satisfacao").style.borderBottom = "3px groove #FF0C00";
 
         document.getElementById("textoSobre").innerHTML = `
+
         <div class = "row">
         <div class="col-7">
           
@@ -103,7 +104,12 @@ function conteudoSobre(identifica){
             </a>
           </div>    
   </div>
-</div>
+</div>    
+<script>
+$('.carrossel').carousel({
+intervalo: 2000
+})
+</script>
         `;
         
     }
@@ -116,3 +122,4 @@ function conteudoSobre(identifica){
         document.getElementById("textoSobre").innerHTML = "<p>Quer ser uma das nossas empresas parceiras? Envie um e-mail fazendo sua requisição aqui pro Coolmida. <br> <i>atendimento@coolmida.com</i></p>";
     }
 }
+

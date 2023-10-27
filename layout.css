@@ -73,3 +73,11 @@ label{
     left: 50%;
     width:90%
 }
+.busca{
+    width: 90%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+card-body{
+    margin-left: 3%;
+}

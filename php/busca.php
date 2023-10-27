@@ -5,7 +5,7 @@ $pesquisa = $_POST['busquinha'];
 $servername = 'localhost';
 $username = 'root';
 $password = 'usbw';
-$database = 'testelogin';
+$database = 'coolmida';
 
 $con = new mysqli($servername, $username, $password, $database);
 

@@ -3,6 +3,7 @@ $login = $_POST['login'];
 $senha = $_POST['senha']; 
 $senha2 = $_POST['senha2'];
 $nome = $_POST['nome'];
+$telefone = $_POST['telefone'];
 
 $senha_hash = md5($senha);
 
@@ -17,7 +18,7 @@ if ($con->connect_error) {
     die('Erro na conexão: ' . $con->connect_error);
 }
 
-$query_select = "SELECT login FROM usuarios WHERE login = '$login'";
+$query_select = "SELECT usuario_email FROM usuarios WHERE usuario_email = '$login'";
 $result = $con->query($query_select);
 
 if (!$result) {
@@ -27,7 +28,7 @@ if (!$result) {
 $row = $result->fetch_assoc();
 $logarray = $row['login'];
 
-if (empty($login) || empty($senha) || empty($nome)) {
+if (empty($login) || empty($senha) || empty($nome)|| empty($telefone)|| empty($senha2)) {
     echo "<script language='javascript' type='text/javascript'>
     alert('Todos os campos devem ser preenchidos');window.location.href='../navbar/cadastro.html';</script>";
     
@@ -37,7 +38,7 @@ if (empty($login) || empty($senha) || empty($nome)) {
         alert('Esse usuário já existe');window.location.href='../navbar/cadastro.html';</script>";
     } else {
         if ($senha == $senha2){
-          $query = "INSERT INTO usuarios (login, senha , nome) VALUES ('$login', '$senha_hash' , '$nome')";
+          $query = "INSERT INTO usuarios (usuario_email, senha , nome_usuario , telefone_usuario) VALUES ('$login', '$senha_hash' , '$nome', '$telefone')";
           $insert = $con->query($query);
         }else{
           echo "<script language='javascript' type='text/javascript'>
