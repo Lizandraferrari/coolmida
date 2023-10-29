@@ -11,7 +11,7 @@ $senha_hash = md5($senha);
 $servername = 'localhost';
 $username = 'root';
 $password = 'usbw';
-$database = 'testelogin';
+$database = 'coolmida';
 
 $con = new mysqli($servername, $username, $password, $database);
 

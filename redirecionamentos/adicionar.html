@@ -64,26 +64,18 @@
           </ul>
         </div>
       </nav>
-<!--CREATE TABLE IF NOT EXISTS produtos (
-    categoria VARCHAR(50) NOT NULL,
-    tipo VARCHAR(50) NOT NULL,
-    nome VARCHAR(50) NOT NULL,
-    preco DECIMAL(4 , 2 ) NOT NULL,
-    estoque int,
-    PRIMARY KEY (id_produto),
-    UNIQUE KEY nome_produto_unico (nome_produto)
-);-->
+
 <form class="centroForm" method="POST" action="../php/adicionar.php">
     <div class="card borda" >
         <h4 style="font-weight: bold;text-align: center;">Adicione seu produto:</h4><br>
         <label>Nome:</label>
-        <i class="bi bi-envelope-fill iconinput">
-        <input class="inputcard" type="text"  id="nmProd" placeholder = "Insira o nome do produto"></i><br>
+        <i class="bi bi-cake-fill iconinput">
+        <input class="inputcard" type="text" name = "nmProd" id="nmProd" placeholder = "Insira o nome do produto"></i><br>
 
           <div class="row">
     <div class="col-6">
         <label for="categoriaAdd">Categoria:</label>
-        <select name="categoria" id="categoriaAdd">
+        <select name="categoriaAdd" id="categoriaAdd">
           <option value="">Classe do produto</option>
           <option value="massas">Massas</option>
           <option value="doces">Doces</option>
@@ -115,23 +107,33 @@
 <br>
 
         <label>Descrição:</label>
-        <i class="bi bi-lock-fill iconinput">
-        <input class="inputcard" type="password" id="descricao" placeholder = "Descreva brevemente o produto"></i><br>
+        <i class="bi bi-list-ul iconinput">
+        <input class="inputcard" type="text" name = "descricao" id="descricao" placeholder = "Descreva brevemente o produto"></i><br>
 
         <div class="row">
             <div class="col-6">
         <label>Preço:</label>
         <i class = "iconinput">R$
-        <input style = "text-align: center;" class = "inputcard" type="number" step="0.01"  min="0.01" id="preco" placeholder = "00,00"></i><br>
+        <input style = "text-align: center;" class = "inputcard" name = "preco" type="number" step="0.01"  min="0.01" id="preco" placeholder = "00,00"></i><br>
         <br>
     </div>
-    <label>Quantidade:</label>
+    <label>Estoque:</label>
+    <i class = "iconinput">
     <div class="col-6">
-<input class = "inputcard" type = "number" id="qtd" placeholder="0"><br>
+<input style = "text-align: center;"  class = "inputcard" type = "number" name = "qtd" id="qtd" placeholder="0"></i><br>
 </div>
 </div>
+<!--
+<label for="foto">Adicione uma imagem em .jpg ou .png:</label>
+<input type="file" id="foto" name = "foto" accept="image/png, image/jpeg, image/jpg" />
 
-<br><button class = "botoes" type="button"  value="Cadastrar" id="btnadd">Adicionar</button>
+-->
+
+<!--
+terminar a implementação com JS e referenciamento pra parte de busca 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
+-->
+<br><button class = "botoes" type="submit" name = "btnadd"  value="btnadd" id="btnadd">Adicionar</button>
 
     </div>
 </form>
