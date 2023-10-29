@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "SELECT * FROM produtos WHERE nome LIKE '%$termoBusca%'";
   $result = $conn->query($sql);
 } else {
-  $sql = "SELECT * FROM sua_tabela";
+  $sql = "SELECT * FROM produtos";
   $result = $conn->query($sql);
 }
 
@@ -122,6 +122,7 @@ if ($result->num_rows > 0) {
     echo "<th>Categoria</th>";
     echo "<th>Tipo</th>";
     echo "<th>Nome</th>";
+    echo "<th>Descricao</th>";
     echo "<th>Preço</th>";
     echo "<th>Estoque</th>";
     echo "</tr>";
@@ -131,8 +132,11 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["categoria"] . "</td>";
         echo "<td>" . $row["tipo"] . "</td>";
         echo "<td>" . $row["nome"] . "</td>";
+        echo "<td>" . $row["descricao"] . "</td>";
         echo "<td>" . $row["preco"] . "</td>";
         echo "<td>" . $row["estoque"] . "</td>";
+        echo "<td><button class='botao' type='submit' onclick=\"window.location.href='alterar.html'\">Alterar</button></td>";
+        echo "<td><button class = '' type = 'submit' onclick = \"deletar()\"> Apagar </button></td>";
         echo "</tr>";
     }
 
