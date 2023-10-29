@@ -4,6 +4,7 @@ $senha = $_POST['senha'];
 $senha2 = $_POST['senha2'];
 $nome = $_POST['nome'];
 $telefone = $_POST['telefone'];
+$nivel = $_POST['nivel'];
 
 $senha_hash = md5($senha);
 
@@ -28,7 +29,7 @@ if (!$result) {
 $row = $result->fetch_assoc();
 $logarray = $row['login'];
 
-if (empty($login) || empty($senha) || empty($nome)|| empty($telefone)|| empty($senha2)) {
+if (empty($login) || empty($senha) || empty($nome)|| empty($telefone)|| empty($senha2)|| empty($nivel)) {
     echo "<script language='javascript' type='text/javascript'>
     alert('Todos os campos devem ser preenchidos');window.location.href='../navbar/cadastro.html';</script>";
     
@@ -38,7 +39,7 @@ if (empty($login) || empty($senha) || empty($nome)|| empty($telefone)|| empty($s
         alert('Esse usuário já existe');window.location.href='../navbar/cadastro.html';</script>";
     } else {
         if ($senha == $senha2){
-          $query = "INSERT INTO usuarios (usuario_email, senha , nome_usuario , telefone_usuario) VALUES ('$login', '$senha_hash' , '$nome', '$telefone')";
+          $query = "INSERT INTO usuarios (usuario_email, senha , nome_usuario , telefone_usuario , nivel) VALUES ('$login', '$senha_hash' , '$nome', '$telefone' , '$nivel')";
           $insert = $con->query($query);
         }else{
           echo "<script language='javascript' type='text/javascript'>

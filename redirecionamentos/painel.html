@@ -18,7 +18,7 @@
               <a class="nav-link" href="../index.html">INÍCIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="sobre.html">SOBRE</a>
+              <a class="nav-link" href="../navbar/sobre.html">SOBRE</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS</a>
@@ -43,7 +43,7 @@
 
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="login.html">LOGIN</a>
+                <a class="nav-link" href="../navbar/login.html">LOGIN</a>
               </li>
               <li class="nav-item active dropdown">
                 <a class="nav-link py-2 px-0 px-lg-2" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,79 +53,46 @@
                 <div class="dropdown-menu margem" aria-labelledby="navbarDropdownMenuLink">
                   <form>
                     <input type="text" placeholder="Estou com fome de..." id="busquinha">
-                    <button type="button" class="btnbusca" onclick="buscar('navbar')">Procurar</button>
+                    <button type="button" class="btnbusca" onclick="buscar('cadastro')">Procurar</button>
                 </form>
                 </div>
             </li>
-            <a class="nav-link py-2 px-0 px-lg-2" href="carrinho.html" rel="noopener">
+            <a class="nav-link py-2 px-0 px-lg-2" href="../navbar/busca.html" rel="noopener">
               <i class="bi-cart"></i><small class="d-lg-none ms-2">Carrinho</small>
           </a>
         </li>
           </ul>
         </div>
       </nav>
-      
-Massas japones doces comidas lanches bebidas vegano<br>
-<h3 class="" id="">Categoria > Massas > Pizzas</h3>
-<i class="bi-search ">
-   <input class="busca" type="password"  id="senha" placeholder = "Estou com fome de..."></i><br>
-   <input type="submit">
-
-<!--vai ter q botar pelo js ): -->
-<div class="row">
-   <div class="card" style="width: 13rem;">
-    <img src="tempimg/braz-pizzaria-.webp" width="100%">
-    <div class="card-body">
-      <h5 class="card-title">Pizza de especiarias</h5>
-      <p class="card-text">pizza de pipipi popopo com sei la oq ao molho bechamel</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+<!--
+    Painel loja:
+    >lojista cadastra na função lojista
+    >crud produto (pag php processar no bd)
+-->
+<h1>Informações lojistas</h1>
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"> </a>
+ 
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a href="adicionar.html" class="nav-link ">Adicionar produtos</a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-dark"> Modificar produtos</a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-dark">Deletar produtos</a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-dark">Gerenciar pedidos</a>
+    </li>
+  </ul>
   </div>
-
-  <div class="card" style="width: 13rem;">
-    <img src="tempimg/mussarela-1.png" width="100%">
-    <div class="card-body">
-      <h5 class="card-title">Pizza de especiarias</h5>
-      <p class="card-text">pizza de pipipi popopo com sei la oq ao molho bechamel</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 13rem;">
-    <img src="tempimg/timthumb.jpg" width="100%">
-    <div class="card-body">
-      <h5 class="card-title">Pizza de especiarias</h5>
-      <p class="card-text">pizza de pipipi popopo com sei la oq ao molho bechamel</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 13rem;">
-    <img src="tempimg/uo9k07ywej6byarfffgkzbjv90bw.jpg" width="100%">
-    <div class="card-body">
-      <h5 class="card-title">Pizza de especiarias</h5>
-      <p class="card-text">pizza de pipipi popopo com sei la oq ao molho bechamel</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 13rem;">
-    <img src="tempimg/14-1.jpg" width="100%">
-    <div class="card-body">
-      <h5 class="card-title">Pizza de especiarias</h5>
-      <p class="card-text">pizza de pipipi popopo com sei la oq ao molho bechamel</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
 </div>
 
-
-<button type="submit" onclick="devolver()">Teste variavel</button>
-
-</body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-</html>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    </html>
