@@ -1,4 +1,6 @@
 <?php
+require 'config.php';
+
 $nmProd = $_POST['nmProd'];
 $categoriaAdd = $_POST['categoriaAdd'];
 $tipoAdd = $_POST['tipoAdd'];
@@ -6,23 +8,9 @@ $descricao = $_POST['descricao'];
 $preco = $_POST['preco'];
 $qtd = $_POST['qtd'];
 
-$servername = 'localhost';
-$username = 'root';
-$password = 'usbw';
-$database = 'coolmida';
-
-$con = new mysqli($servername, $username, $password, $database);
-
-if ($con->connect_error) {
-    die('Erro na conexão: ' . $con->connect_error);
-}
-
 $query_select = "SELECT nome FROM produtos WHERE nome = '$nmProd' "; 
 $result = $con->query($query_select);
 
-if (!$result) {
-    die('Erro na consulta: ' . $con->error);
-}
 
 $row = $result->fetch_assoc();
 $novo = $row['nome']; 
@@ -53,5 +41,4 @@ if (empty($nmProd) || empty($categoriaAdd) || empty($descricao) || empty($preco)
     }
 }
 
-$con->close();
 ?>

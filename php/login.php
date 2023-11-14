@@ -1,19 +1,11 @@
 <?php
+require 'config.php';
+
 $login = $_POST['login'];
 $senha = $_POST['senha']; 
 
 $senha_hash = md5($senha);
 
-$servername = 'localhost';
-$username = 'root';
-$password = 'usbw';
-$database = 'coolmida';
-
-$con = new mysqli($servername, $username, $password, $database);
-
-if ($con->connect_error) {
-    die('Erro na conexão: ' . $con->connect_error);
-}
 if (empty($login) || empty($senha)) {
     echo "<script language='javascript' type='text/javascript'>
     alert('Por favor, preencha todos os campos.');window.location.href='../navbar/login.html';</script>";
@@ -35,5 +27,4 @@ if (empty($login) || empty($senha)) {
             alert('Usuário ou senha incorreto(s).');window.location.href='../navbar/login.html';</script>";
         }
 
-$con->close();
 ?>

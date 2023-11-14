@@ -95,16 +95,7 @@
  <button type = "button">Buscar</button>
 
  <?php
-$servername = 'localhost';
-$username = 'root';
-$password = 'usbw';
-$database = 'coolmida';
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
+require 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $termoBusca = $_POST["buscarAlterar"];
@@ -145,7 +136,6 @@ if ($result->num_rows > 0) {
     echo "Nenhum resultado encontrado.";
 }
 
-$conn->close();
 ?>
     </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

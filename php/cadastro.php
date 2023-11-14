@@ -1,4 +1,6 @@
 <?php
+require 'config.php';
+
 $login = $_POST['login'];
 $senha = $_POST['senha']; 
 $senha2 = $_POST['senha2'];
@@ -7,17 +9,6 @@ $telefone = $_POST['telefone'];
 $nivel = $_POST['nivel'];
 
 $senha_hash = md5($senha);
-
-$servername = 'localhost';
-$username = 'root';
-$password = 'usbw';
-$database = 'coolmida';
-
-$con = new mysqli($servername, $username, $password, $database);
-
-if ($con->connect_error) {
-    die('Erro na conexão: ' . $con->connect_error);
-}
 
 $query_select = "SELECT usuario_email FROM usuarios WHERE usuario_email = '$login'";
 $result = $con->query($query_select);
@@ -29,7 +20,7 @@ if (!$result) {
 $row = $result->fetch_assoc();
 $logarray = $row['login'];
 
-if (empty($login) || empty($senha) || empty($nome)|| empty($telefone)|| empty($senha2)|| empty($nivel)) {
+if (empty($login) || empty($senha) || empty($nome)|| empty($telefone)|| empty($senha2)) {
     echo "<script language='javascript' type='text/javascript'>
     alert('Todos os campos devem ser preenchidos');window.location.href='../navbar/cadastro.html';</script>";
     
@@ -56,5 +47,4 @@ if (empty($login) || empty($senha) || empty($nome)|| empty($telefone)|| empty($s
     }
 } 
 
-$con->close();
 ?>
