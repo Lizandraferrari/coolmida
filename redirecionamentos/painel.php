@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>Pesquisar</title>
     <script src ="../code.js"></script>
-    <link rel="stylesheet"  href="../layout.css" />
+    <link rel="stylesheet"  href="../layout.css" >
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
@@ -95,40 +95,45 @@
  <button type = "button">Buscar</button>
 
  <?php
-require 'config.php';
+require ('../php/config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $termoBusca = $_POST["buscarAlterar"];
 
   $sql = "SELECT * FROM produtos WHERE nome LIKE '%$termoBusca%'";
-  $result = $conn->query($sql);
+  $result = $con->query($sql);
 } else {
   $sql = "SELECT * FROM produtos";
-  $result = $conn->query($sql);
+  $result = $con->query($sql);
 }
 
 if ($result->num_rows > 0) {
-    echo "<table>";
+    echo "<table class='table table-striped'>";
     echo "<tr>";
-    echo "<th>Categoria</th>";
+    echo "<th>ID</th>";
+    echo "<th >Categoria</th>";
     echo "<th>Tipo</th>";
     echo "<th>Nome</th>";
     echo "<th>Descricao</th>";
     echo "<th>Preço</th>";
     echo "<th>Estoque</th>";
+    echo "<th> </th>";
     echo "</tr>";
 
     while ($row = $result->fetch_assoc()) {
+      echo "<form action='../php/deletar.php' method='post'>";
         echo "<tr>";
+        echo "<td>" . $row["id_produto"] . "</td>";
         echo "<td>" . $row["categoria"] . "</td>";
         echo "<td>" . $row["tipo"] . "</td>";
         echo "<td>" . $row["nome"] . "</td>";
         echo "<td>" . $row["descricao"] . "</td>";
         echo "<td>" . $row["preco"] . "</td>";
         echo "<td>" . $row["estoque"] . "</td>";
-        echo "<td><button class='botao' type='submit' onclick=\"window.location.href='alterar.html'\">Alterar</button></td>";
-        echo "<td><button class = '' type = 'submit' onclick = \"deletar()\"> Apagar </button></td>";
+        echo "<td><button class='botoes' type='submit' onclick=\"window.location.href='alterar.html'\">Alterar</button></td>";
+        echo "<td><button class = 'botoes' type = 'submit' name='qual' value = 'deletar'> Apagar </button></td>";
         echo "</tr>";
+        echo "</form";
     }
 
     echo "</table>";

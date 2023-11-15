@@ -1,5 +1,5 @@
 <?php
-require config.php 
+require 'config.php ';
 
 $id = filter_input(INPUT_GET , 'id_produto');
 
@@ -8,6 +8,4 @@ if($id){
     $sql ->bindValue(':id', $id);
     $sql ->execute();
 }
-
-
 ?>

@@ -121,22 +121,3 @@ intervalo: 2000
     }
 }
 
-function deletar(id_produto){
-  if(confirm("Deseja mesmo excluir esse produto?") == true){
-    $.ajax({
-      type: "POST",
-      url: "seu_arquivo_php.php", // Substitua pelo caminho do seu arquivo PHP
-      data: { id_produto: id_produto },
-      success: function (response) {
-        if (response === "exclusao_sucesso") {
-          alert("Produto excluído com sucesso!");
-          // Redirecione ou faça outras ações após a exclusão
-        } else {
-          alert("Erro ao excluir o produto.");
-        }
-      },
-    });
-  }else{
-    window.location.href = 'painel.php';
-  }
-}
