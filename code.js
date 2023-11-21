@@ -16,15 +16,6 @@ function buscar(origem){
       }
       }
     }
-//    let buscou = JSON.stringify(busquinha)
-
-function devolver(){
-    let obj = localStorage.getItem("pesquisa")
-    
-    alert(obj)
-    console.log(obj)
-
-}
 
 function validarEmail() {
     var email = document.getElementById("login").value;

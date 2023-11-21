@@ -119,21 +119,21 @@ if ($result->num_rows > 0) {
     echo "<th>Estoque</th>";
     echo "<th> </th>";
     echo "</tr>";
-
     while ($row = $result->fetch_assoc()) {
-      echo "<form action='../php/deletar.php' method='post'>";
+      echo "<form action='../php/deletar.php' method='post' id = ' " . $row["id_produto"] . "'>";
         echo "<tr>";
-        echo "<td>" . $row["id_produto"] . "</td>";
+        echo "<td name = 'id_produto' id = 'id_produto'>" . $row["id_produto"] . "</td>";
         echo "<td>" . $row["categoria"] . "</td>";
         echo "<td>" . $row["tipo"] . "</td>";
         echo "<td>" . $row["nome"] . "</td>";
         echo "<td>" . $row["descricao"] . "</td>";
         echo "<td>" . $row["preco"] . "</td>";
         echo "<td>" . $row["estoque"] . "</td>";
-        echo "<td><button class='botoes' type='submit' onclick=\"window.location.href='alterar.html'\">Alterar</button></td>";
-        echo "<td><button class = 'botoes' type = 'submit' name='qual' value = 'deletar'> Apagar </button></td>";
+        echo "<input type='hidden' name='id_produto' value='" . $row["id_produto"] . "'>";
+        echo "<td><button class='botoes' type='button' onclick=\"window.location='alterar.html'\">Alterar</button></td>";
+        echo "<td><button class = 'botoes' type = 'submit'> Apagar </button></td>";
         echo "</tr>";
-        echo "</form";
+        echo "</form>";
     }
 
     echo "</table>";
