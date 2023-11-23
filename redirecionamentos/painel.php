@@ -70,32 +70,32 @@
     >crud produto (pag php processar no bd)
 -->
 <h1>Informações lojistas</h1>
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"> </a>
- 
+
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
       <a href="adicionar.html" class="nav-link ">Adicionar produtos</a>
     </li>
-    <li>
-      <a href="alterar.html" class="nav-link link-dark"> Modificar produtos</a>
-    </li>
-    <li>
-      <a href="#" class="nav-link link-dark">Deletar produtos</a>
-    </li>
-    <li>
-      <a href="#" class="nav-link link-dark">Gerenciar pedidos</a>
-    </li>
+
   </ul>
-  </div>
-</div>
+
 
 <i class="bi-search ">
   <input class="busca" type="text"  id="buscarAlterar" placeholder = "Procure pelo nome, algum produto especifico para alterar"></i><br>
  <button type = "button">Buscar</button>
-
+ <table class='table table-striped'>
+  <tr>
+  <th >Categoria</th>
+   <th>Tipo</th>
+    <th>Nome</th>
+   <th>Descricao</th>
+   <th>Preço</th>
+    <th>Estoque</th>
+    <th> </th>
+    <th> </th>
+    </tr>
  <?php
 require ('../php/config.php');
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $termoBusca = $_POST["buscarAlterar"];
@@ -108,21 +108,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if ($result->num_rows > 0) {
-    echo "<table class='table table-striped'>";
-    echo "<tr>";
-    echo "<th>ID</th>";
-    echo "<th >Categoria</th>";
-    echo "<th>Tipo</th>";
-    echo "<th>Nome</th>";
-    echo "<th>Descricao</th>";
-    echo "<th>Preço</th>";
-    echo "<th>Estoque</th>";
-    echo "<th> </th>";
-    echo "</tr>";
+
     while ($row = $result->fetch_assoc()) {
-      echo "<form action='../php/deletar.php' method='post' id = ' " . $row["id_produto"] . "'>";
+      echo "<form action='../php/manipulacao.php' method='post' id = ' " . $row["id_produto"] . "'>";
         echo "<tr>";
-        echo "<td name = 'id_produto' id = 'id_produto'>" . $row["id_produto"] . "</td>";
         echo "<td>" . $row["categoria"] . "</td>";
         echo "<td>" . $row["tipo"] . "</td>";
         echo "<td>" . $row["nome"] . "</td>";
@@ -130,8 +119,8 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["preco"] . "</td>";
         echo "<td>" . $row["estoque"] . "</td>";
         echo "<input type='hidden' name='id_produto' value='" . $row["id_produto"] . "'>";
-        echo "<td><button class='botoes' type='button' onclick=\"window.location='alterar.html'\">Alterar</button></td>";
-        echo "<td><button class = 'botoes' type = 'submit'> Apagar </button></td>";
+        echo "<td><button class='botoes' type='submit' id = 'alterar' name = 'alterar'>Alterar</button></td>";
+        echo "<td><button class = 'botoes' type = 'submit' id = 'deletar' name = 'deletar'> Apagar </button></td>";
         echo "</tr>";
         echo "</form>";
     }

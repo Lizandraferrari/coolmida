@@ -64,23 +64,27 @@
           </ul>
         </div>
       </nav>
-<!--CREATE TABLE IF NOT EXISTS produtos (
-    categoria VARCHAR(50) NOT NULL,
-    tipo VARCHAR(50) NOT NULL,
-    nome VARCHAR(50) NOT NULL,
-    preco DECIMAL(4 , 2 ) NOT NULL,
-    estoque int,
-    PRIMARY KEY (id_produto),
-    UNIQUE KEY nome_produto_unico (nome_produto)
-);-->
 
-<!--
-<form class="centroForm" method="POST" action="../php/alterar.php">
+      <form class="centroForm" method="POST" action="../php/alterar.php">
     <div class="card borda" >
-        <h4 style="font-weight: bold;text-align: center;">Adicione seu produto:</h4><br>
+      <?php
+      require ('../php/config.php');
+    session_start();
+    $nome = $_SESSION["nome"];
+    $categoria = $_SESSION["nome"];
+    $descricao = $_SESSION["nome"];
+    $tipo = $_SESSION["nome"];
+    $preco = $_SESSION["nome"];    
+    $estoque = $_SESSION["nome"];
+
+    session_destroy();
+
+echo $nome;
+?>
+        <h4 style="font-weight: bold;text-align: center;">Altere seu produto:</h4><br>
         <label>Nome:</label>
         <i class="bi bi-cake-fill iconinput">
-        <input class="inputcard" type="text"  id="nmProd" placeholder = "Insira o nome do produto"></i><br>
+        <input class="inputcard" type="text"  id="nmProd" name="nome" placeholder = "Insira o nome do produto"></i><br>
 
           <div class="row">
     <div class="col-6">
@@ -118,7 +122,7 @@
 
         <label>Descrição:</label>
         <i class="bi bi-list-ul iconinput">
-        <input class="inputcard" type="password" id="descricao" placeholder = "Descreva brevemente o produto"></i><br>
+        <input class="inputcard" type="text" id="descricao" placeholder = "Descreva brevemente o produto"></i><br>
 
         <div class="row">
             <div class="col-6">
@@ -133,17 +137,15 @@
 </div>
 </div>
 
-<label for="foto">Adicione uma imagem em .jpg ou .png:</label>
+<!--
+  <label for="foto">Adicione uma imagem em .jpg ou .png:</label>
 <input type="file" id="foto" name = "foto" accept="image/png, image/jpeg, image/jpg" />
-
-terminar a implementação com JS e referenciamento pra parte de busca 
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
-
+-->
 <br><button class = "botoes" type="button"  value="Cadastrar" id="btnadd">Adicionar</button>
 
     </div>
 </form>
--->
+
 
       
     </body>
