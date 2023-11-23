@@ -67,30 +67,22 @@
 
       <form class="centroForm" method="POST" action="../php/alterar.php">
     <div class="card borda" >
-      <?php
-      require ('../php/config.php');
-    session_start();
-    $nome = $_SESSION["nome"];
-    $categoria = $_SESSION["nome"];
-    $descricao = $_SESSION["nome"];
-    $tipo = $_SESSION["nome"];
-    $preco = $_SESSION["nome"];    
-    $estoque = $_SESSION["nome"];
 
-    session_destroy();
-
-echo $nome;
-?>
         <h4 style="font-weight: bold;text-align: center;">Altere seu produto:</h4><br>
         <label>Nome:</label>
         <i class="bi bi-cake-fill iconinput">
-        <input class="inputcard" type="text"  id="nmProd" name="nome" placeholder = "Insira o nome do produto"></i><br>
-
+          <?php
+          $nome = $_GET['nome'];
+        echo "<input class='inputcard' type='text' value = '$nome' id='nmProd' name='nome' placeholder = 'Insira o nome do produto'></i><br>";
+?>
           <div class="row">
     <div class="col-6">
         <label for="categoriaAdd">Categoria:</label>
         <select name="categoria" id="categoriaAdd">
-          <option value="">Classe do produto</option>
+        <?php
+        $categoria = $_GET['categoria'];
+          echo"<option value='$categoria'>$categoria</option>";
+          ?>
           <option value="massas">Massas</option>
           <option value="doces">Doces</option>
           <option value="lanches">Lanches</option>
@@ -103,7 +95,10 @@ echo $nome;
     <div class="col-6">
 <label for="tipoAdd">Tipo:</label>
 <select name="tipoAdd" id="tipoAdd">
-  <option value="">Tipo de produto</option>
+  <?php
+  $tipo = $_GET['tipo'];
+  echo"<option value='$tipo'>$tipo</option>";
+  ?>
   <option value="hamburgueres">Hamburgueres</option>
   <option value="pizzas">Pizzas</option>
   <option value="marmitas">Marmitas</option>
@@ -122,25 +117,30 @@ echo $nome;
 
         <label>Descrição:</label>
         <i class="bi bi-list-ul iconinput">
-        <input class="inputcard" type="text" id="descricao" placeholder = "Descreva brevemente o produto"></i><br>
+          <?php
+          $descricao = $_GET['descricao'];
+        echo "<input class='inputcard' type='text' id='descricao'value='$descricao' placeholder = 'Descreva brevemente o produto'></i><br>";
+        ?>
 
         <div class="row">
             <div class="col-6">
         <label>Preço:</label>
         <i class = "iconinput">R$
-        <input style = "text-align: center;" class = "inputcard" type="number" step="0.01"  min="0.01" id="preco" placeholder = "00,00"></i><br>
+          <?php
+          $preco = $_GET['preco'];
+        echo "<input style = 'text-align: center;' class = 'inputcard'  id='preco' value='$preco' placeholder = '00,00'></i><br>";
+        ?>
         <br>
     </div>
     <label>Quantidade:</label>
     <div class="col-6">
-<input class = "inputcard" type = "number" id="qtd" placeholder="0"><br>
+    <?php
+$quantidade = $_GET['estoque'];
+echo "<input class = 'inputcard'  value = '$quantidade'id='qtd' placeholder='0'><br>";
+?>
 </div>
 </div>
 
-<!--
-  <label for="foto">Adicione uma imagem em .jpg ou .png:</label>
-<input type="file" id="foto" name = "foto" accept="image/png, image/jpeg, image/jpg" />
--->
 <br><button class = "botoes" type="button"  value="Cadastrar" id="btnadd">Adicionar</button>
 
     </div>
