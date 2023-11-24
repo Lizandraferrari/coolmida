@@ -9,11 +9,12 @@ $senha_hash = md5($senha);
 if (empty($login) || empty($senha)) {
     echo "<script language='javascript' type='text/javascript'>
     alert('Por favor, preencha todos os campos.');window.location.href='../navbar/login.html';</script>";
-    exit;
 }
-    $result = mysqli_query($con, "SELECT `usuario_email`, `senha` FROM `usuarios` WHERE `usuario_email` = '" . $login . "'");
+$query_select = "SELECT usuario_email , senha FROM usuarios WHERE usuario_email = '$login'";
+$result = $con->query($query_select);
+
         if ($result->num_rows > 0) {
-            $row = mysqli_fetch_assoc($result); 
+            $row = $result->fetch_assoc();
 
             if ($senha_hash == $row['senha']) {
                 echo "<script language='javascript' type='text/javascript'>

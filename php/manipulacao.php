@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['alterar'])){
   $preco = $row["preco"] ;
   $estoque = $row["estoque"] ;
   header("location:../redirecionamentos/alterar.php?
-  nome=$nome&tipo=$tipo&categoria=$categoria&descricao=$descricao&preco=$preco&estoque=$estoque");
+  nome=$nome&tipo=$tipo&categoria=$categoria&descricao=$descricao&preco=$preco&estoque=$estoque&id_produto=$id_produto");
 }
   }
 }elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deletar'])) {
@@ -25,6 +25,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['alterar'])){
   $result = $con->query($query_select);
   
   echo "<script language='javascript' type='text/javascript'>
-  alert('Usuário deletado com sucesso!');window.location.href='../redirecionamentos/painel.php';</script>";
+  alert('Produto deletado com sucesso!');window.location.href='../redirecionamentos/painel.php';</script>";
 }
 ?>

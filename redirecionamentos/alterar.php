@@ -65,24 +65,35 @@
         </div>
       </nav>
 
-      <form class="centroForm" method="POST" action="../php/alterar.php">
+      <form class="centroForm" method="POST"  action="../php/fimalteracao.php">
     <div class="card borda" >
 
         <h4 style="font-weight: bold;text-align: center;">Altere seu produto:</h4><br>
         <label>Nome:</label>
         <i class="bi bi-cake-fill iconinput">
           <?php
-          $nome = $_GET['nome'];
-        echo "<input class='inputcard' type='text' value = '$nome' id='nmProd' name='nome' placeholder = 'Insira o nome do produto'></i><br>";
-?>
+          require '../php/config.php';
+          if (isset($_GET['id_produto'])){
+            $id_produto = filter_input(INPUT_GET,"id_produto");
+            $nome = filter_input(INPUT_GET,"nome");
+            $categoria = filter_input(INPUT_GET,"categoria");
+            $tipo  = filter_input(INPUT_GET,"tipo");
+            $quantidade = filter_input(INPUT_GET,"estoque");
+            $descricao =  filter_input(INPUT_GET,"descricao");
+            $preco  = filter_input(INPUT_GET,"preco");
+
+  
+          }
+
+
+          ?>
+       <input class='inputcard' type='text' value = '<?php echo $nome; ?>' id='nomeAlt' name='nomeAlt' placeholder = 'Insira o nome do produto'></i><br>
+     
           <div class="row">
     <div class="col-6">
-        <label for="categoriaAdd">Categoria:</label>
-        <select name="categoria" id="categoriaAdd">
-        <?php
-        $categoria = $_GET['categoria'];
-          echo"<option value='$categoria'>$categoria</option>";
-          ?>
+        <label for="categoriaAlt">Categoria:</label>
+        <select name='categoriaAlt' id='categoriaAlt'>
+        <option value='<?php echo $categoria; ?>'><?php echo $categoria; ?></option>
           <option value="massas">Massas</option>
           <option value="doces">Doces</option>
           <option value="lanches">Lanches</option>
@@ -93,58 +104,49 @@
         <br>
     </div>
     <div class="col-6">
-<label for="tipoAdd">Tipo:</label>
-<select name="tipoAdd" id="tipoAdd">
-  <?php
-  $tipo = $_GET['tipo'];
-  echo"<option value='$tipo'>$tipo</option>";
-  ?>
-  <option value="hamburgueres">Hamburgueres</option>
-  <option value="pizzas">Pizzas</option>
-  <option value="marmitas">Marmitas</option>
-  <option value="pokes">Pokes</option>
-  <option value="gelados">Açais/sorvetes</option>
-  <option value="combos">Combos</option>
-  <option value="esfihas">Esfihas</option>
-  <option value="guloseimas">Guloseimas</option>
-  <option value="porcoes">Porções</option>
-  <option value="bolos">Bolos</option>
-  <option value="outros">Outros</option>
-</select>
-</div>
-</div>
-<br>
+    <label for="tipoAlt">Tipo:</label>
+    <select name="tipoAlt" id="tipoAlt">
+      <option value='<?php echo $tipo; ?>'><?php echo $tipo; ?></option>
+      
+      <option value="hamburgueres">Hamburgueres</option>
+      <option value="pizzas">Pizzas</option>
+      <option value="marmitas">Marmitas</option>
+      <option value="pokes">Pokes</option>
+      <option value="gelados">Açais/sorvetes</option>
+      <option value="combos">Combos</option>
+      <option value="esfihas">Esfihas</option>
+      <option value="guloseimas">Guloseimas</option>
+      <option value="porcoes">Porções</option>
+      <option value="bolos">Bolos</option>
+      <option value="outros">Outros</option>
+    </select>
+    </div>
+    </div>
+    <br>
 
         <label>Descrição:</label>
         <i class="bi bi-list-ul iconinput">
-          <?php
-          $descricao = $_GET['descricao'];
-        echo "<input class='inputcard' type='text' id='descricao'value='$descricao' placeholder = 'Descreva brevemente o produto'></i><br>";
-        ?>
+          <input class='inputcard' type='text' id='descricaoAlt' name ='descricaoAlt' value='<?php echo $descricao ?>' placeholder = 'Descreva brevemente o produto'></i><br>
 
         <div class="row">
             <div class="col-6">
         <label>Preço:</label>
         <i class = "iconinput">R$
-          <?php
-          $preco = $_GET['preco'];
-        echo "<input style = 'text-align: center;' class = 'inputcard'  id='preco' value='$preco' placeholder = '00,00'></i><br>";
-        ?>
+         <input style = 'text-align: center;' class = 'inputcard' name = 'precoAlt'  id='precoAlt' value='<?php echo $preco; ?>' placeholder = '00,00'></i><br>
         <br>
     </div>
     <label>Quantidade:</label>
     <div class="col-6">
-    <?php
-$quantidade = $_GET['estoque'];
-echo "<input class = 'inputcard'  value = '$quantidade'id='qtd' placeholder='0'><br>";
-?>
-</div>
-</div>
+    <input class = 'inputcard' name = 'qtd' value = '<?php echo $quantidade; ?>'id='qtd' placeholder='0'><br>
 
-<br><button class = "botoes" type="button"  value="Cadastrar" id="btnadd">Adicionar</button>
-
+    <input type = 'hidden' name = 'id_produto' id  = 'id_produto' value = '<?php echo $id_produto; ?>'>
     </div>
-</form>
+    </div>
+
+    <br><button class = "botoes" type="submit"  value="Submit" id="btnadd">Alterar</button>
+
+        </div>
+    </form>
 
 
       
@@ -154,3 +156,4 @@ echo "<input class = 'inputcard'  value = '$quantidade'id='qtd' placeholder='0'>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
     </html> 
+
