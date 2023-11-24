@@ -38,10 +38,12 @@ nav{
 .iconinput{
     border-bottom: 2px groove;   
     color:#5f5f5f;
+    
 }
 .inputcard{
     border: none;
     width: 90%;
+    
 }
 .botoes{
     border-radius: 10px;
@@ -80,7 +82,4 @@ label{
 }
 card-body{
     margin-left: 3%;
-}
-button:hover{
-    background-color: #6b6b6b;
 }

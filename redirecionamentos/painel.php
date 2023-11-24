@@ -9,7 +9,7 @@
     <script src ="../code.js"></script>
     <link rel="stylesheet"  href="../layout.css" >
 </head>
-<body>
+<body style = "text-align: center;">
   <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand"><img src="../img/coolmida.png" width="90px" ></a>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -64,25 +64,14 @@
           </ul>
         </div>
       </nav>
-<!--
-    Painel loja:
-    >lojista cadastra na função lojista
-    >crud produto (pag php processar no bd)
--->
-<h1>Informações lojistas</h1>
 
-  <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">
-      <a href="adicionar.html" class="nav-link ">Adicionar produtos</a>
-    </li>
+<br><h1>Informações dos produtos:</h1>
+<br><br>
+<button class = "botoes" onclick="window.location.href = 'adicionar.html'"><i class="bi bi-bag-plus-fill">
+      <h4 ">Adicionar novo produto</h4></i></button>
+  <br><br><br>
 
-  </ul>
-
-
-<i class="bi-search ">
-  <input class="busca" type="text"  id="buscarAlterar" placeholder = "Procure pelo nome, algum produto especifico para alterar"></i><br>
- <button type = "button">Buscar</button>
- <table class='table table-striped'>
+ <table class='centroForm table table-striped'>
   <tr>
   <th >Categoria</th>
    <th>Tipo</th>

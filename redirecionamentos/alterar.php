@@ -128,17 +128,17 @@
         <i class="bi bi-list-ul iconinput">
           <input class='inputcard' type='text' id='descricaoAlt' name ='descricaoAlt' value='<?php echo $descricao ?>' placeholder = 'Descreva brevemente o produto'></i><br>
 
-        <div class="row">
-            <div class="col-6">
-        <label>Preço:</label>
-        <i class = "iconinput">R$
-         <input style = 'text-align: center;' class = 'inputcard' name = 'precoAlt'  id='precoAlt' value='<?php echo $preco; ?>' placeholder = '00,00'></i><br>
-        <br>
-    </div>
-    <label>Quantidade:</label>
-    <div class="col-6">
-    <input class = 'inputcard' name = 'qtd' value = '<?php echo $quantidade; ?>'id='qtd' placeholder='0'><br>
 
+
+
+        <div class="row">
+            <div class="col">
+        <label>Preço:</label>
+        R$
+         <input style = 'text-align: center;' class = 'inputcard ' name = 'precoAlt'  id='precoAlt' value='<?php echo $preco; ?>' placeholder = '00,00'><br>
+        <br>
+    <label>Quantidade:</label>
+    <input  style = 'text-align: center;'  class = 'inputcard' name = 'qtd' value = '<?php echo $quantidade; ?>'id='qtd' placeholder='0'><br>
     <input type = 'hidden' name = 'id_produto' id  = 'id_produto' value = '<?php echo $id_produto; ?>'>
     </div>
     </div>
